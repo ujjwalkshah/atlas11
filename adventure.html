@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <title>ATLANTIS ADVENTURE</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            
+        }
+        .container{
+            position: relative;
+        }
+        
+        .image{
+            width: 100%;
+            height: 100vh;
+        }
+        
+       
+        .navbar{
+            height: 10vh;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(29, 29, 47);
+            
+           
+        }
+        .navbar p{
+            line-height: 10vh;
+            margin-left: 20px;
+            margin-right: 5vw;
+            color: antiquewhite;
+
+        }
+        .contact{
+            position: absolute;
+            margin-left: 10px;
+            
+        }
+
+        .navbar ul{
+            display: flex;
+            
+        }
+        .navbar ul li{
+            list-style: none;
+            
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            line-height: 10vh;
+            padding: 10px;
+            margin-right: 20px;
+            
+            
+        }
+        #checkbox{
+            display: none;
+        }
+        #checkbtn{
+            display: none;
+            line-height: 10vh;
+            margin-left: 5vw; 
+            color: antiquewhite; 
+            font-size: 25px;
+        }
+        #checkbox:checked ~ ul{
+            left: 0px;
+        }
+        @media screen and (max-width:900px) {
+            .navbar ul li{
+                display: none;
+            }
+            
+            #checkbtn{
+                display: block;
+            }
+            
+            .navbar ul {
+                height: 100vh;
+                width: 40%;
+                position: fixed;
+                background-color: rgb(29, 29, 47);
+                /* left: 100px; */
+                left: -100%;
+                transition: .5s;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .navbar ul li{
+                margin-top: 10vh;
+            display: block;
+            text-align: center;
+        
+        
+            }
+            
+        }
+        .icons{
+            line-height: 10vh;
+            padding: 10px;
+            
+        }
+        .book{
+            line-height: 10vh;
+            color: antiquewhite;
+        }
+        .logo{
+            line-height: 10vh;            
+            font-family: 'Times New Roman', Times, serif;
+            
+            
+        }
+        hr{
+            height: 1px;
+            width: 100%;
+            background-color: antiquewhite;
+            
+        }
+        .links{
+            color: antiquewhite;
+        }
+        .content{
+            position: fixed;
+            top: 10vh;
+            height: 10vh;
+            width: 100%;
+            
+        }
+        .content:hover{
+            background-color: rgb(29, 29, 47);
+            
+        }
+        .content:hover #active{
+            background-color: antiquewhite;
+            color: rgb(29, 29, 47)
+        }
+        .navbar:hover{
+            background-color: rgb(29, 29, 47);
+        }
+        .elink{
+            color: antiquewhite;
+            text-decoration: none;
+            padding: 10px;
+            line-height: 10vh;
+        }
+        .content ul{
+            display: flex;
+            justify-content: space-between;
+            
+            
+        }
+        .content ul li{
+            list-style: none;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #checkbox2{
+            display: none;
+           
+        }
+        #checkbtn2{
+            display: none;
+            line-height: 10vh;
+            text-align: center; 
+            color: antiquewhite; 
+            
+        }
+        #checkbox2:checked ~ ul{
+            top: 10vh;
+        }
+         @media screen and (max-width:900px) {
+            
+            .content ul li{
+                display: none;
+            }
+            #checkbtn2{
+                display: block;
+            }
+            .content ul {
+                height: 90vh;
+                width: 100%;
+                position: fixed;
+                background-color: rgb(29, 29, 47);
+                top: 10vh;
+                top: -100%;
+                transition: .5s;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .content ul li{
+                display: block;
+                text-align: center;
+                font-size: medium;
+        
+        
+            }
+            .elink{
+                font-size: small;
+                
+            }
+        }
+
+                  /* content */
+
+
+    
+                  .heading1{
+            padding: 5vh;
+            text-align: center;
+            margin-top: 5vh;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
+            font-size: 1.5rem;
+            color: rgb(29, 29, 47);
+        }
+        .h1{
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 1px;
+            background-color: rgb(29, 29, 47);
+            
+        }
+        .para{
+            width: 50%;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .para1{
+            text-align: center;
+            margin-top: 10vh;
+            font-size: 1rem;
+            
+        }
+        .book1{
+            font-size: large;
+            text-align: center;
+            background-color: rgb(29, 29, 47);
+            margin-top: 5vh;
+        }
+        .booklink{
+            
+            padding: 4px;
+            text-decoration: none;
+            color: antiquewhite;
+            font-size: 1rem;
+        }
+       .i{
+        width: 32vw;
+        height: 30vw;
+        padding: 2px;
+        border-radius: 12px;
+       }
+       .imgs{
+        margin-top: 5vh;
+        display: flex;
+        justify-content: space-between;
+       }
+       .h2{
+        width: 90vw;
+        height: 2px;
+        background-color: rgb(29, 29, 47);
+        margin-left: auto;
+        margin-right: auto;
+       }
+       .more{
+        height: 3vh;
+        line-height: 3vh;
+        margin-top: 2vh;
+       text-align: center;
+       width: 50%;
+       margin-left: auto;
+       margin-right: auto;
+       background-color: rgb(29, 29, 47);
+        
+       
+       }
+       .moreinfo{
+        font-size: 1rem;
+        text-decoration: none;
+        color: antiquewhite;
+
+       }
+       
+       .experiencepara{
+        display: flex;
+        justify-content: center;
+       }
+       .culinary{
+        margin-top: 5vh;
+        padding: 10px;
+       }
+       .culinaryimg{
+        height: 50vh;
+        width: 40vw;
+        border-radius: 12px;
+       }
+       .intro{
+        height: 35vh;
+        width:40vw;
+       
+        
+       }
+       .h3{
+        color: rgb(29, 29, 47);
+        font-size: 1rem;
+        padding: 4px;
+        font-weight: bold;
+       }
+       .p4{
+        
+        font-size: 1rem;
+        padding: 4px;
+       }
+       .explore1{
+        width: 30%;
+        background-color:rgb(29, 29, 47);
+        color: antiquewhite;
+        text-align: center;
+       
+       }
+       @media screen and (max-width:900px) {
+        .experiencepara{
+            display: block;           
+            
+        }
+        .culinary{
+            text-align: center;
+            margin-top: 0px;
+        }
+        .culinaryimg{
+            height: 50vh;
+            width: 80%;
+            text-align: center;
+        }
+        .intro{
+            width: 100%;
+            height: 20vh;
+            text-align: center;
+            
+        }
+        .p4{
+            font-size: .8rem;
+        }
+        .explore1 p{
+            font-size: .8rem;
+        }
+        .para1{
+            margin-bottom: 5vh;
+        }
+       }
+       @media screen and (max-width:900px) {
+        .imgs{
+            display: block;
+            /* justify-content: center;
+            align-items: center; */
+            text-align: center;
+            
+        }
+        .i{
+            width: 80%;
+            height: 50vh;
+            margin: auto;
+            
+            
+        }
+       }
+       .review{
+        display: flex;
+        justify-content: center;
+        margin-top: 5vh;
+        
+       }
+       .reviewpara{
+        width: 30%;
+        height: 50vh;
+        margin: 2vh;
+       }
+       
+       .reviewimg{
+        width: 40%;
+        height: 50vh;
+        margin: 2vh;
+        border-radius: 12px;
+       }
+       .h4{
+        text-align: center;
+        font-size: 1.5rem;
+       }
+       .p5{
+        margin-top: 5vh;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 5vh;
+       }
+       .line1{
+        width: 100%;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        background-color: rgb(29, 29, 47);
+        
+       }
+       .line2{
+        width: 30%;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        background-color: rgb(29, 29, 47);
+        margin-right: auto;
+        margin-left: auto;
+       }
+       @media screen and (max-width:900px) {
+
+        .review{
+            display: block; 
+           text-align: center;
+        }
+        .reviewpara{
+           
+        width: 80%;
+        height: 50vh;
+        margin: 0px;
+        
+        margin-right: auto;
+        margin-left: auto;
+       
+       }
+       .reviewimg{
+        width: 80%;
+        height: 50vh;
+        margin: 0px;
+        border-radius: 12px;
+        
+       }
+       }
+       .experiencepara1{
+        display: flex;
+        justify-content: center;
+       }
+       .culinary1{
+        margin-top: 5vh;
+        padding: 10px;
+       }
+       .culinaryimg1{
+        height: 50vh;
+        width: 30vw;
+        border-radius: 12px;
+       }
+       .intro1{
+        height: 35vh;
+        width:30vw;
+       
+        
+       }
+       @media screen and (max-width:900px) {
+        .experiencepara1{
+            display: block;
+            text-align: center;
+            margin-top: 0px;
+
+        }
+        .culinaryimg1{
+        height: 50vh;
+        width: 80vw;
+        border-radius: 12px;
+       }
+       .intro1{
+        height: 20vh;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+       }
+       }
+       .imgs{
+        height: 70vh;
+        width: 100%;
+        background-image: url(images/img23.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-size: 100% 100%;
+        color: antiquewhite;
+       }
+       .en{
+       padding-top: 10vh;
+        height: 20vh;
+        width: 30%;
+        font-size: 1rem;
+        padding-left: 10px;
+       }
+
+       .scroll-container {
+            
+            overflow: auto;
+            white-space: nowrap;
+            padding: 10px;
+            }
+
+        .scroll-container img {
+            padding: 10px;
+            border-radius: 20px;
+            }
+            .vid{
+                text-align: center;
+            }
+        .video{
+            height: 60vh;
+            width: 60%;
+           
+
+        }
+        @media screen and (max-width:500px) {
+            .video{
+            height: 40vh;
+            width: 80%;
+           }
+           .i{
+            width: 90%;
+            height: 40vh;
+            margin: auto;
+            
+            
+        }
+        .culinaryimg1{
+        height: 40vh;
+        width: 90%;
+        border-radius: 12px;
+       }
+        .culinaryimg{
+            height: 40vh;
+            width: 90%;
+            text-align: center;
+        } 
+        .reviewimg{
+            height: 40vh;
+            width: 90%;
+        }
+        .heading1{
+            margin-top: 0px;
+        }
+        }    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="adventureimg/img25.jpg" class="image" alt="">        
+
+        <div class="navbar">                
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" id="checkbtn"><i class="fa-solid fa-bars"></i></label>
+            <p>ATLANTIS THE ROYAL</p>                                             
+            <ul>                
+                <label for="checkbox" id="checkbtn"><i class="fa-solid fa-xmark"></i></label>
+                <li><a href="index.html" class="links"><i class="fa-solid fa-house"></i>HOME</a></li>
+                <li><a href="about.html" class="links">ABOUT</a></li>
+                <li><a href="services.html" class="links">SERVICES</a></li>
+                <li><a href="#" class="book">BOOK NOW</a></li>                
+            </ul>
+            
+        </div>
+        
+        <div class="content">
+            <hr>
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2" id="checkbtn2">LEARN MORE<i class="fa-solid fa-caret-down"></i></i></i></label>
+            <ul>                
+                <label for="checkbox2" id="checkbtn2"><i class="fa-solid fa-xmark"></i></i></i></label>
+                <li><a href="rooms.html" class="elink"> STAYS <i class="fa-solid fa-hotel"></i>  </a></li>
+                <li><a href="entertainment.html" class="elink">ENTERTAINMENT <i class="fa-solid fa-champagne-glasses"></i></a></li>
+                <li><a href="dining.html" class="elink">DINING <i class="fa-solid fa-burger"></i></i></a></li>
+                <li><a href="adventure.html" class="elink" id="active">ADVENTURE <i class="fa-solid fa-mountain"></i> </a></li>
+                <li><a href="#" class="elink">EVENTS <i class="fa-solid fa-calendar-days"></i> </a></li>
+                <li><a href="#" class="elink">OFFERS <i class="fa-solid fa-tag"></i></a></li> 
+                
+                              
+            </ul>
+        </div>
+
+   
+    </div>
+
+    <p class="heading1">A LEGENDARY ADVENTURE AWAITS </p>
+        <hr class="h1">
+
+        <div class="para">
+            <p class="para1">
+                Start exploring The World’s Largest Waterpark, home to over 105 record-breaking slides, attractions, and experiences. <br>
+                Slide in and make waves at Aquaventure Waterpark, explore Dubai’s favourite aquarium and meet our friendly Indo-Pacific 
+                bottlenose dolphins and South African fur seals at Atlas Village.<br><br>
+
+                From pulse-racing slides to incredible animal encounters, Atlantis Aquaventure has plenty of legendary 
+                experiences to keep you entertained.<br>
+
+            </p>
+        </div>
+        
+
+        <div class="experience">
+            <p class="heading1">SKY DIVING, SAFARI</p>
+            <hr class="h1">
+    
+            
+            <div class="experiencepara">
+                        <div class="culinary">
+    
+                                <img src="adventureimg/img87.jpg" class="culinaryimg" alt="">
+                                <div class="intro">
+                                        <P class="h3">SKY DIVING</P>
+                                        <P class="p4">
+                                            Skydiving in Dubai is an experience like no other. With views of the towering Burj Khalifa, 
+                                            pristine beaches, and the Middle Eastern desert, it's an unforgettable feat for thrill-seekers.
+                                             Bread Street Kitchen and Dubai’s all-time favourite hangout Wavehouse.
+                                        </P>
+                                        <div class="more">
+                                            <a href="#skydiving" class="moreinfo">view more</a>
+                                        </div>
+                                </div>
+                            
+                        </div>
+                        <div class="culinary">
+    
+                                <img src="adventureimg1/img94.jpg" class="culinaryimg" alt="">
+                                <div class="intro">
+                                        <P class="h3">SAFARI </P>
+                                        <P class="p4" >
+                                            Evening desert safari with full of entertainment and provide best services.
+                                             Dune buggy, Quad bikes, Camel ride , dune bashing, Sand boarding.
+                                        </P>
+                                        <div class="more">
+                                            <a href="#safari" class="moreinfo">view more</a>
+                                        </div>
+                                </div>
+                            
+                        </div>
+                        
+            </div>
+
+
+
+        <div class="review">
+            <img src="adventureimg/img81.jpg" class="reviewimg" alt="">
+            <div class="reviewpara">
+                <hr class="line1">
+                <P class="h4">SCUBA DIVING</P>  
+                <hr class="line2">
+                <P class="p5" >
+                    Discover Dubai's best scuba diving spots and plunge into a magical underwater world. Get the most out of your stay in Dubai. 
+                    <br>
+                    Located in Atlantis, The Palm
+                    <div class="more">
+                        <a href="#scubadiving" class="moreinfo">view more</a>
+                    </div>
+                </P>
+                <hr class="line1">
+            </div>
+        </div>
+
+
+        <div class="rooms">
+            <div id="skydiving">
+                <p class="heading1">SKY DIVING </p>
+                <hr class="h1">
+                
+                <div class="scroll-container">
+                    <img src="adventureimg/img88.jpg" class="i" alt="">
+                    <img src="adventureimg/img89.jpg" class="i" alt="">
+                    <img src="adventureimg1/img90.jpg" class="i" alt="">
+                    <img src="adventureimg1/img91.jpg" class="i" alt="">
+                    <img src="adventureimg1/img92.jpg" class="i" alt="">
+                </div>
+            </div>                              
+        </div>
+        
+        <div class="rooms">
+            <div id="safari">
+                <p class="heading1">SAFARI</p>
+                <hr class="h1">
+                <div class="scroll-container">
+                    <img src="adventureimg1/img93.jpg" class="i" alt="">
+                    <img src="adventureimg1/img95.jpg" class="i" alt="">
+                    <img src="adventureimg1/img96.jpg" class="i" alt="">
+                    <img src="adventureimg1/img97.jpg" class="i" alt="">
+                    <img src="adventureimg1/img93.jpg" class="i" alt="">
+                </div>
+            </div>                              
+        </div>
+                
+        <div class="rooms">
+            <div id="scubadiving">
+                <p class="heading1">SCUBA DIVING </p>
+                <hr class="h1">
+                <div class="scroll-container">
+                    <img src="adventureimg/img82.jpg" class="i" alt="">
+                    <img src="adventureimg/img83.jpg" class="i" alt="">
+                    <img src="adventureimg/img84.jpg" class="i" alt="">
+                    <img src="adventureimg/img85.jpg" class="i" alt="">
+                    <img src="adventureimg/img86.jpg" class="i" alt="">
+                </div>
+            </div>                              
+        </div>
+
+
+
+        <div class="review">
+            <img src="adventureimg1/img98.jpg" class="reviewimg" alt="">
+            <div class="reviewpara">
+                <hr class="line1">
+                <P class="h4">ADVENTURE PARK</P>  
+                <hr class="line2">
+                <P class="p5" >
+                    Enjoy unstoppable fun, exciting playgrounds & thrilling fun-in-motion Games & Activities. 
+                    <br>
+                    Located in Atlantis, The Palm
+                    <div class="more">
+                        <a href="#" class="moreinfo">view more</a>
+                    </div>
+                </P>
+                <hr class="line1">
+            </div>
+        </div>
+</body>
+</html>
