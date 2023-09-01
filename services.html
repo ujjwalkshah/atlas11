@@ -23,7 +23,17 @@
             width: 100%;
             height: 100vh;
         }
-        
+        #my-vid{
+            
+            top: 0;
+            left: 0;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            /* pointer-events: none; */
+            /* z-index: -1; */
+        }
        
         .navbar{
             height: 10vh;
@@ -91,7 +101,7 @@
             .navbar ul {
                 
                 height: 100vh;
-                width: 40%;
+                width: 100%;
                 position: fixed;
                 background-color: rgb(29, 29, 47);
                 /* left: 100px; */
@@ -524,14 +534,149 @@
             height: 40vh;
             width: 90%;
         }
+        .image{
+            width: 100%;
+            height: 50vh;
+        }
+        #my-vid{
+            
+            top: 0;
+            left: 0;
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+            /* pointer-events: none; */
+            /* z-index: -1; */
+        }
+        .heading1{
+            padding: 2vh;
+            text-align: center;
+            margin-top: 5vh;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: lighter;
+            font-size: 1.5rem;
+            color: rgb(29, 29, 47);
+        }
+        .para{
+            width: 80%;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .para1{
+            text-align: center;
+            margin-top: 2vh;
+            font-size: 1rem;
+            
+        }
+        .culinary{
+        margin-top: 5vh;
+        margin-bottom: 2vh;
+        padding: 10px;
+       }
+       .p4{
+        font-size: .8rem;
+       }
+       .intro1{
+        height: 20vh;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+       }
         }    
 
+     /* footer */
+     .footer{
+        background-color:  rgb(29, 29, 47);
+        height:50vh;
+        width: 100%;
+    }
+    .footercon{
+        color: antiquewhite;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4vh;
+        text-align: center;
+    }
+    .linksfooter{
+        padding: 5vh;
+        display: flex;
+        justify-content: center;
+       
+    }
+    .footerli{
+        color: antiquewhite;
+        padding-inline: 5vw;
+       text-decoration: none;
+       font-size: 1rem;
+    }
+    .footerhr{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .symlinks{
+        margin-right: auto;
+        margin-left: auto;
+        width: 15%;
+        color: antiquewhite;
+        justify-content: space-between;
+        display: flex;
+        margin-top: 10vh;
+        font-size: 4vh;       
+    }
+   
+   
+    @media screen and (max-width:900px) {
+        .footercon{
+            width: 80%;
+            font-size: 1rem; 
+        }
+        .footerli{
+            padding-inline: 3vw; 
+            font-size: 1rem; 
+        }
+        .footerhr{
+            width: 90%;
+        }
+        .symlinks{
+            width: 30%;
+            font-size: 3vh;
+            margin-top: 5vh;
+        }
+    }
+    @media screen and (max-width:500px) {
+        .footercon{
+            width: 90%;
+            font-size: .6rem; 
+        }
+        .footerli{
+            padding-inline: 2vw; 
+            font-size: .6rem; 
+        }
+        .footerhr{
+            width: 90%;
+        }
+        .symlinks{
+            width: 30%;
+            font-size: 2vh;
+            margin-top: 5vh;
+        }
+        .footer{
+            height: 40vh;
+        }
+    }
+    
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="servicesimg/img66.jpg" class="image" alt="">        
-
+        <!-- <img src="servicesimg/img66.jpg" class="image" alt="">         -->
+        <video class="vid" id="my-vid" autoplay loop muted>
+            <source src="vid2.mp4" type="video/mp4">
+    </video>
         <div class="navbar">                
             <input type="checkbox" id="checkbox">
             <label for="checkbox" id="checkbtn"><i class="fa-solid fa-bars"></i></label>
@@ -719,7 +864,7 @@
                                     <div class="culinary">
             
                                             <img src="servicesimg/img72.jpg" class="culinaryimg" alt="">
-                                            <div class="intro">
+                                            <div class="intro1">
                                                     <P class="h3">ARABIAN TERRACE</P>
                                                     <P class="p4">
                                                         Whether you are in the mood to sip drinks by the pool, 
@@ -735,7 +880,7 @@
                                     <div class="culinary">
             
                                             <img src="servicesimg/img73.jpg" class="culinaryimg" alt="">
-                                            <div class="intro">
+                                            <div class="intro1">
                                                     <P class="h3">ELEMENTS</P>
                                                     <P class="p4" >
                                                         Whether you are in the mood to sip drinks by the pool, 
@@ -750,7 +895,7 @@
                                     <div class="culinary">
             
                                             <img src="servicesimg/img74.jpg" class="culinaryimg" alt="">
-                                            <div class="intro">
+                                            <div class="intro1">
                                                     <P  class="h3">NOBU BAR</P>
                                                     <P class="p4">
                                                         Nobu restaurant, located on the iconic Palm Jumeirah, has been selected as one of the best restaurants 
@@ -767,5 +912,32 @@
                     </div>
             
 
+                    <!-- footer -->
+
+                    <div class="footer">
+                        <div class="linksfooter">
+                               <a href="about.html" class="footerli">ABOUT </a>
+                               <a href="services.html" class="footerli">SERVICES</a>
+                               <a href="rooms.html" class="footerli">STAYS</a>
+                               <a href="dining.html" class="footerli">RESTAURANTS</a>
+                               <a href="#" class="footerli">BOOK</a>
+                       </div>
+                       <hr class="footerhr">
+                       <p class="footercon">
+                        The new iconic landmark of Dubai, Atlantis The Royal welcomes you to an experience that will completely
+                        redefine your perspective of luxury. Crafted by the world’s leading designers, architects and artists, 
+                        this is a destination where everything has been designed to challenge the boundaries of imagination.
+                       </p>
+                       <div class="symlinks">
+                           <i class="fa-brands fa-twitter" class="sym"></i>
+                           <i class="fa-brands fa-instagram" class="sym"></i>
+                           <i class="fa-brands fa-facebook" class="sym"></i>
+                           <i class="fa-brands fa-whatsapp" class="sym"></i>
+                           <i class="fa-solid fa-location-dot" class="sym"></i>
+                       </div>
+                       <p class="footercon">
+                           <i class="fa-regular fa-copyright"></i> copyright : uskgroup.com
+                       </p>
+                   </div>
 </body>
 </html>
